@@ -6,7 +6,9 @@ export default function Footer() {
     <div className="footer">
       ©2021
       <span className="code">
-        <strong> Open-source code </strong>{" "}
+        <a href="https://github.com/MaferNap/dictionaryword-react-app">
+          <strong> Open-source code </strong>{" "}
+        </a>{" "}
       </span>
       built by{" "}
       <span className="profile">
