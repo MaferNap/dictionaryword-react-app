@@ -1,0 +1,47 @@
+.App {
+  font-family: "Pangolin", cursive;
+  text-align: center;
+}
+
+.frame {
+  position: relative;
+  top: 25px;
+  border: none;
+  border-color: peachpuff;
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  border-radius: 7px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.searchbutton {
+  color: plum;
+  background: paleturquoise;
+  border-radius: 6px;
+  border: lightblue;
+  padding: 7px;
+  transition: ease-in-out 300ms;
+}
+
+.searchbutton:hover {
+  border: lightblue;
+  color: paleturquoise;
+  background: plum;
+  font-size: 18px;
+}
+
+.wordBox {
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.concept {
+  text-transform: capitalize;
+}
+
+.definition {
+  font-family: "Pangolin", cursive;
+  font-size: 13px;
+}
