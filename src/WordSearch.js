@@ -13,16 +13,7 @@ export default function WordSearch() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    //const options = {
-    //method: "GET",
-    //url: `https://wordsapiv1.p.rapidapi.com/words/${word}`,
-    //headers: {
-    // "x-rapidapi-key": "501708158bmsh8630056176c00b0p1049dejsnc7f2e070c2a0",
-    //"x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
-    //}
-    //};
 
-    //axios.get(options).then(displayWord);
     const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${word}`;
 
     axios.get(apiUrl).then(displayWord);
@@ -36,7 +27,7 @@ export default function WordSearch() {
     console.log(response.data[0].phonetics[0].text);
     console.log(response.data[0].meanings[0].definitions[0].example);
     getUpdate(true);
-    //alert(`The word you're looking for is ${word}`);
+
     getDefinition(response.data[0].meanings[0].definitions[0].definition);
     getConcept(response.data[0].word);
     getPronunciation(response.data[0].phonetics[0].text);
@@ -88,6 +79,7 @@ export default function WordSearch() {
           </p>
           <br />
           <p>"...{example}"</p>
+          <p> or, {concept} can also mean: </p>
         </div>
       </div>
     );
