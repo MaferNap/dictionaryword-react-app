@@ -10,6 +10,8 @@ export default function WordSearch() {
   let [pronunciation, getPronunciation] = useState("");
   let [type, getType] = useState("");
   let [example, getExample] = useState("");
+  let [secondDef, getSecondDef] = useState("");
+  let [secondExample, getSecondExample] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -20,19 +22,24 @@ export default function WordSearch() {
   }
   function displayWord(response) {
     console.log(response.data[0].meanings[0].definitions[0].definition);
+    console.log(response.data[0].meanings[0].definitions[1].definition);
     console.log(response.data[0].word);
     console.log(response.data[0].meanings[0].partOfSpeech);
     console.log(response.data[0]);
 
     console.log(response.data[0].phonetics[0].text);
     console.log(response.data[0].meanings[0].definitions[0].example);
+    console.log(response.data[0].meanings[0].definitions[1].example);
+
     getUpdate(true);
 
     getDefinition(response.data[0].meanings[0].definitions[0].definition);
+    getSecondDef(response.data[0].meanings[0].definitions[1].definition);
     getConcept(response.data[0].word);
     getPronunciation(response.data[0].phonetics[0].text);
     getType(response.data[0].meanings[0].partOfSpeech);
     getExample(response.data[0].meanings[0].definitions[0].example);
+    getSecondExample(response.data[0].meanings[0].definitions[1].example);
   }
 
   function getWord(event) {
@@ -80,6 +87,12 @@ export default function WordSearch() {
           <br />
           <p>"...{example}"</p>
           <p> or, {concept} can also mean: </p>
+          <br />
+          {secondDef}
+          <br />
+          <p>like in this last example:</p>
+          <br />
+          <p> "...{secondExample}"</p>
         </div>
       </div>
     );
